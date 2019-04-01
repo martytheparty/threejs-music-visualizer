@@ -1,0 +1,23 @@
+{
+  "name": "audio-viz",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch": "npm-watch build",
+    "build": "cp app/src/index.js app/dist/index.js",
+    "http-serve": "http-server ./example",
+    "docker-build": "docker build -t audio-viz-nginx .",
+    "dev-server": "docker run -p 9000:80 -v /home/marty/tech/examples/threejs/audio-viz/app/:/usr/share/nginx/html --name  viz-dev --rm  audio-viz-nginx"
+  },
+  "watch": { "build": "app/src/*.js" },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "http-server": "^0.11.1",
+    "npm-watch": "^0.5.0",
+    "three": "^0.99.0"
+  }
+}
